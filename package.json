@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/705h-S/Algo-DiscordBot/issues"
   },
-  "homepage": "https://github.com/705h-S/Algo-DiscordBot#readme"
+  "homepage": "https://github.com/705h-S/Algo-DiscordBot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
+  }
 }
