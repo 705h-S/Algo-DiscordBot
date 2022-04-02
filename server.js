@@ -1,13 +1,12 @@
 // Imports/ require
 // For discord.js documents refer here https://discord.js.org/#/
-const Discord = require("discord.js");
-const client = new Discord.Client({
-  partials: ["MESSAGE", "CHANNEL", "REACTION"],
-});
+const { Discord, Client, Collection, Intents } = require('discord.js');
+
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 require("dotenv").config();
 
-client.commands = new Discord.Collection();
-client.events = new Discord.Collection();
+client.commands = new Collection();
+client.events = new Collection();
 // we want this file to acces these other files 
 ["commandHandle", "eventHandle"].forEach((handler) => {
   require(`./Handlers/${handler}`)(client, Discord);
